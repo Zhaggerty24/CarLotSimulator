@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
 
 namespace CarLotSimulator
 {
@@ -6,6 +7,64 @@ namespace CarLotSimulator
     {
         static void Main(string[] args)
         {
+          CarLot lot = new CarLot();
+            
+            
+            var Wheels = new Car();
+            lot.CarList.Add(Wheels);
+
+            Wheels.Make = "Hundai";
+            Wheels.Model = "Sonata";
+            Wheels.Year = 2005;
+
+            Wheels.MakeEngineNoise();
+            Wheels.MakeHonkNoise();
+
+            var Wheels2 = new Car()
+            {
+                Make = "Nissan",
+                Model = "GT-R",
+                Year = 2023,
+               
+            };
+            lot.CarList.Add(Wheels2);
+            
+            Wheels2.MakeEngineNoise();
+            Wheels2.MakeEngineNoise();
+
+            var Wheels3 = new Car("Honda", "Civic", 2022)
+            {
+
+            };
+            lot.CarList.Add(Wheels3);
+            
+            Wheels3.MakeEngineNoise();
+            Wheels3.MakeHonkNoise();
+
+
+            foreach(var wheel in lot.CarList)
+            {
+                Console.WriteLine($"{Wheels.Make} {Wheels.Model} {Wheels.Year}");
+                Console.WriteLine($"{Wheels2.Make} {Wheels2.Model} {Wheels2.Year}");
+                
+            }
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             //TODO
 
             //Create a seperate class file called Car
