@@ -41,6 +41,7 @@ namespace CarLotSimulator
             Wheels3.MakeEngineNoise();
             Wheels3.MakeHonkNoise();
 
+            Console.WriteLine($"Number of cars created: {CarLot.numberOfCars}"); 
 
             foreach(var wheel in lot.CarList)
             {
